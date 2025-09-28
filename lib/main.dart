@@ -11,9 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Calculator App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const CalculatorPage(),
       debugShowCheckedModeBanner: false,
     );
@@ -109,7 +107,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
               padding: const EdgeInsets.all(24),
               child: Text(
                 displayText,
-                style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -139,10 +140,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
             padding: const EdgeInsets.all(20),
             shape: const CircleBorder(),
           ),
-          child: Text(
-            btnText,
-            style: const TextStyle(fontSize: 24),
-          ),
+          child: Text(btnText, style: const TextStyle(fontSize: 24)),
         );
       }).toList(),
     );
