@@ -72,7 +72,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
             }
           }
 
-          displayText = result.toString();
+          displayText = result.toInt().toString();
           firstOperand = "";
           operator = "";
           secondOperand = "";
