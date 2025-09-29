@@ -99,34 +99,45 @@ class _CalculatorPageState extends State<CalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Calculator")),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            alignment: Alignment.bottomRight,
-            padding: const EdgeInsets.all(24),
-            child: Text(
-              displayText,
-              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+      body: Container(
+        padding: const EdgeInsets.all(50),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              alignment: Alignment.bottomRight,
+              child: Text(
+                displayText,
+                style: const TextStyle(
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          ),
-          Column(
-            children: [
-              buildButtonRow(["7", "8", "9", "/"]),
-              buildButtonRow(["4", "5", "6", "*"]),
-              buildButtonRow(["1", "2", "3", "-"]),
-              buildButtonRow(["0", ".", "=", "+"]),
-              buildButtonRow(["C"]),
-            ],
-          ),
-        ],
+            Container(
+              alignment: Alignment.bottomRight,
+              child: Column(
+                children: [
+                  buildButtonRow(["7", "8", "9", "/"]),
+                  buildButtonRow(["4", "5", "6", "*"]),
+                  buildButtonRow(["1", "2", "3", "-"]),
+                  buildButtonRow(["0", ".", "=", "+"]),
+                  buildButtonRow(["C"]),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget buildButtonRow(List<String> buttons) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      // horizontally center clear row; evenly expand the other rows
+      mainAxisAlignment: buttons[0] == "C"
+          ? MainAxisAlignment.spaceEvenly
+          : MainAxisAlignment.spaceBetween,
       children: buttons.map((btnText) {
         return ElevatedButton(
           onPressed: () {
