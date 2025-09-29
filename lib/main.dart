@@ -101,17 +101,12 @@ class _CalculatorPageState extends State<CalculatorPage> {
       appBar: AppBar(title: const Text("Calculator")),
       body: Column(
         children: [
-          Expanded(
-            child: Container(
-              alignment: Alignment.bottomRight,
-              padding: const EdgeInsets.all(24),
-              child: Text(
-                displayText,
-                style: const TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+          Container(
+            alignment: Alignment.bottomRight,
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              displayText,
+              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
             ),
           ),
           Column(
