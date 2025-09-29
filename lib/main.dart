@@ -100,6 +100,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
     return Scaffold(
       appBar: AppBar(title: const Text("Calculator")),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             alignment: Alignment.bottomRight,
